@@ -1,3 +1,16 @@
+:root {
+  --matrix-green: #00ff00;
+  --matrix-dark-green: #003300;
+  --matrix-black: #000000;
+  --matrix-text-glow: 0 0 10px #00ff00;
+}
+
+body {
+  background-color: var(--matrix-black);
+  color: var(--matrix-green);
+  font-family: 'Courier New', monospace;
+}
+
 .App {
   padding: 20px;
   max-width: 800px;
@@ -5,9 +18,11 @@
 }
 
 .container {
-  background-color: #f5f5f5;
+  background-color: rgba(0, 20, 0, 0.9);
   padding: 20px;
-  border-radius: 8px;
+  border: 1px solid var(--matrix-green);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
 }
 
 .input-section {
@@ -18,18 +33,34 @@
 
 .input-section input {
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background-color: var(--matrix-black);
+  border: 1px solid var(--matrix-green);
+  border-radius: 2px;
+  color: var(--matrix-green);
   flex: 1;
+  font-family: 'Courier New', monospace;
+}
+
+.input-section input:focus {
+  outline: none;
+  box-shadow: var(--matrix-text-glow);
 }
 
 .input-section button {
   padding: 8px 16px;
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  background-color: var(--matrix-dark-green);
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
+  border-radius: 2px;
   cursor: pointer;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.input-section button:hover {
+  background-color: var(--matrix-green);
+  color: var(--matrix-black);
+  box-shadow: var(--matrix-text-glow);
 }
 
 .ignore-section {
@@ -46,10 +77,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--matrix-green);
 }
 
 .error {
-  color: red;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000;
   margin: 10px 0;
 }
 
@@ -61,9 +94,11 @@
 .results li {
   padding: 8px;
   margin: 4px 0;
-  background-color: white;
-  border-radius: 4px;
+  background-color: rgba(0, 20, 0, 0.7);
+  border: 1px solid var(--matrix-green);
+  border-radius: 2px;
 }
+
 .language-stats {
   width: 100%;
   max-width: 600px;
@@ -76,13 +111,15 @@
 
 .language-bar {
   height: 20px;
-  background-color: #eee;
-  border-radius: 10px;
+  background-color: var(--matrix-black);
+  border: 1px solid var(--matrix-green);
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .language-fill {
   height: 100%;
+  background-color: var(--matrix-dark-green);
   transition: width 0.3s ease;
 }
 
@@ -90,5 +127,5 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  color: #666;
+  color: var(--matrix-green);
 }
